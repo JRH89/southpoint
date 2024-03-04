@@ -77,10 +77,11 @@ const GalleryComponent = () => {
   }
   return (
     <div>
-      <h1 className='w-full text-center mx-auto py-2 text-gray-500 text-xl bg-gray-100 self-center items-center content-center'>South Point 13</h1>
+
       <div className="flex bg-gray-100 h-screen text-gray-500">
 
         <div className="w-1/4 p-4 bg-gray-300">
+          <h1 className='w-full text-center mx-auto py-2 my-2 text-gray-500 text-xl bg-gray-100 self-center items-center content-center'>South Point 13</h1>
           <ul>
             {houses.map((house, index) => (
               <li
@@ -94,7 +95,7 @@ const GalleryComponent = () => {
             ))}
           </ul>
         </div>
-        <div className="w-3/4 px-2">
+        <div className="w-3/4 px-2 py-8">
           {selectedHouse !== null && (
             <div>
               <Image
@@ -120,6 +121,7 @@ const GalleryComponent = () => {
                   Right
                 </button>
               </div>
+
             </div>
           )}
 
