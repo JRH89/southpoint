@@ -127,7 +127,7 @@ const GalleryComponent = () => {
         </div>
       </div>
       <footer className='bg-gray-100 text-gray-500 text-center py-1'>
-        <p><a href='www.hookerhillstudios.com'>Hooker Hill Studios</a></p>
+        <p><a className='hover:underline' href='www.hookerhillstudios.com'>Hooker Hill Studios</a></p>
       </footer>
     </div>
 
