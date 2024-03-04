@@ -41,7 +41,8 @@ const GalleryComponent = () => {
     },
     {
       name: 'Casitas',
-      images: ['Casitas/Casita-A.png', 'Casitas/Casita-B.png'],
+      images: ['Casitas/Casita-A.png'],
+      images2: ['Casitas/Casita-B.png'],
     },
   ]
 
@@ -106,18 +107,17 @@ const GalleryComponent = () => {
                 <div className="mt-4 flex justify-between">
                   <button
                     onClick={() => handleArrowClick('left')}
-                    className="bg-gray-200 px-4 py-2"
+                    className="bg-gray-200 hover:scale-95 duration-200 px-4 py-2 font-extrabold text-xl"
                   >
                     &larr; {/* Unicode character for left arrow */}
                   </button>
                   <button
                     onClick={() => handleArrowClick('right')}
-                    className="bg-gray-200 px-4 py-2"
+                    className="bg-gray-200 hover:scale-95 duration-200 px-4 py-2 font-extrabold text-xl"
                   >
                     &rarr; {/* Unicode character for right arrow */}
                   </button>
                 </div>
-
 
                 {houses[selectedHouse].video && (
                   <div className="mt-4">
@@ -128,6 +128,33 @@ const GalleryComponent = () => {
                       />
                       Your browser does not support the video tag.
                     </video>
+                  </div>
+                )}
+
+                {houses[selectedHouse].images2 && !houses[selectedHouse].video && (
+                  <div className="mt-4">
+                    <Image
+                      width={1920}
+                      height={1080}
+                      quality={100}
+                      src={`/images/Renders/${houses[selectedHouse].images2[currentImageIndex]}`}
+                      alt={`${houses[selectedHouse].name} Image 2`}
+                      className="shadow-lg"
+                    />
+                    <div className="mt-4 flex justify-between">
+                      <button
+                        onClick={() => handleArrowClick('left')}
+                        className="bg-gray-200 hover:scale-95 duration-200 px-4 py-2 font-extrabold text-xl"
+                      >
+                        &larr; {/* Unicode character for left arrow */}
+                      </button>
+                      <button
+                        onClick={() => handleArrowClick('right')}
+                        className="bg-gray-200 hover:scale-95 duration-200 px-4 py-2 font-extrabold text-xl"
+                      >
+                        &rarr; {/* Unicode character for right arrow */}
+                      </button>
+                    </div>
                   </div>
                 )}
               </>
