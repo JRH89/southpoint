@@ -108,15 +108,16 @@ const GalleryComponent = () => {
                     onClick={() => handleArrowClick('left')}
                     className="bg-gray-200 px-4 py-2"
                   >
-                    Left
+                    &larr; {/* Unicode character for left arrow */}
                   </button>
                   <button
                     onClick={() => handleArrowClick('right')}
                     className="bg-gray-200 px-4 py-2"
                   >
-                    Right
+                    &rarr; {/* Unicode character for right arrow */}
                   </button>
                 </div>
+
 
                 {houses[selectedHouse].video && (
                   <div className="mt-4">
