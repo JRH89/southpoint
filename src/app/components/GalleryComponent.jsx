@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 
 const GalleryComponent = () => {
 	const houses = [
@@ -53,11 +53,21 @@ const GalleryComponent = () => {
 
 	const [selectedHouse, setSelectedHouse] = useState(null)
 	const [currentImageIndex, setCurrentImageIndex] = useState(0)
+	const videoRef = useRef(null)
+
 
 	const handleHouseClick = (index) => {
 		setSelectedHouse(index)
 		setCurrentImageIndex(0)
+
+		// Check if the selected house has a video and update the video source
+		if (houses[index].video && videoRef.current) {
+			videoRef.current.src = houses[index].video
+			videoRef.current.load() // Ensure the video is reloaded
+		}
 	}
+
+
 
 	const handleArrowClick = (direction) => {
 		const newIndex =
@@ -124,11 +134,8 @@ const GalleryComponent = () => {
 								</div>
 								{houses[selectedHouse].video && (
 									<div className="mt-4">
-										<video width="100%" height="auto" controls>
-											<source
-												src={houses[selectedHouse].video}
-												type="video/mp4"
-											/>
+										<video ref={videoRef} width="100%" height="auto" controls>
+											<source src={houses[selectedHouse].video} type="video/mp4" />
 											Your browser does not support the video tag.
 										</video>
 									</div>
