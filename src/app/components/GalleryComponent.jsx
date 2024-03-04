@@ -90,8 +90,8 @@ const GalleryComponent = () => {
 			{loading && <p>Loading...</p>
 			}
 
-			<div className="flex bg-gray-100 min-h-screen text-gray-500">
-				<div className="w-1/4 p-4 bg-gray-300">
+			<div className="flex portrait:flex-col mx-auto w-full bg-gray-100 min-h-screen text-gray-500">
+				<div className="w-1/4 portrait:w-full p-4 bg-gray-300">
 					<h1
 						onClick={() => {
 							setSelectedHouse(null)
@@ -106,7 +106,7 @@ const GalleryComponent = () => {
 							<li
 								key={index}
 								onClick={() => handleHouseClick(index)}
-								className={`cursor-pointer text-sm text-center hover:ml-4 duration-200 p-2 mb-2 ${selectedHouse === index ? 'bg-white' : 'bg-gray-200'
+								className={`cursor-pointer text-sm text-center hover:ml-4 duration-200 p-2 mb-2 portrait:mb-1 ${selectedHouse === index ? 'bg-white' : 'bg-gray-200'
 									}`}
 							>
 								{house.name}
@@ -115,7 +115,7 @@ const GalleryComponent = () => {
 					</ul>
 				</div>
 				{!loading &&
-					<div className="w-3/4 px-2 py-8">
+					<div className="w-3/4 portrait:w-full px-2 py-8">
 						<div>
 							{selectedHouse !== null && (
 								<>
