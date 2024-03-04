@@ -53,10 +53,12 @@ const GalleryComponent = () => {
 
 	const [selectedHouse, setSelectedHouse] = useState(null)
 	const [currentImageIndex, setCurrentImageIndex] = useState(0)
+	const [loading, setLoading] = useState(false)
 	const videoRef = useRef(null)
 
 
 	const handleHouseClick = (index) => {
+		setLoading(true)
 		setSelectedHouse(index)
 		setCurrentImageIndex(0)
 
@@ -65,11 +67,14 @@ const GalleryComponent = () => {
 			videoRef.current.src = houses[index].video
 			videoRef.current.load() // Ensure the video is reloaded
 		}
+
+		setLoading(false)
 	}
 
 
 
 	const handleArrowClick = (direction) => {
+		setLoading(true)
 		const newIndex =
 			direction === 'left'
 				? (currentImageIndex - 1 + houses[selectedHouse].images.length) %
@@ -77,10 +82,14 @@ const GalleryComponent = () => {
 				: (currentImageIndex + 1) % houses[selectedHouse].images.length
 
 		setCurrentImageIndex(newIndex)
+		setLoading(false)
 	}
 
 	return (
 		<div>
+			{loading && <p>Loading...</p>
+			}
+
 			<div className="flex bg-gray-100 min-h-screen text-gray-500">
 				<div className="w-1/4 p-4 bg-gray-300">
 					<h1
@@ -88,7 +97,7 @@ const GalleryComponent = () => {
 							setSelectedHouse(null)
 							setCurrentImageIndex(0)
 						}}
-						className="cursor-pointer w-full text-center mx-auto py-2 my-2 text-gray-500 text-xl bg-gray-100 self-center items-center content-center"
+						className="cursor-pointer w-full text-center mx-auto py-2 my-2 text-gray-500 sm:text-xl text-sm bg-gray-100 self-center items-center content-center"
 					>
 						South Point 13
 					</h1>
@@ -97,7 +106,7 @@ const GalleryComponent = () => {
 							<li
 								key={index}
 								onClick={() => handleHouseClick(index)}
-								className={`cursor-pointer text-center hover:ml-4 duration-200 p-2 mb-2 ${selectedHouse === index ? 'bg-white' : 'bg-gray-200'
+								className={`cursor-pointer text-sm text-center hover:ml-4 duration-200 p-2 mb-2 ${selectedHouse === index ? 'bg-white' : 'bg-gray-200'
 									}`}
 							>
 								{house.name}
@@ -105,87 +114,90 @@ const GalleryComponent = () => {
 						))}
 					</ul>
 				</div>
-				<div className="w-3/4 px-2 py-8">
-					<div>
-						{selectedHouse !== null && (
-							<>
-								<Image
-									loading="eager"
-									width={1920}
-									height={1080}
-									quality={100}
-									src={`/images/Renders/${houses[selectedHouse].images[currentImageIndex]}`}
-									alt={`${houses[selectedHouse].name} Image`}
-									className="shadow-lg"
-								/>
-								<div className="mt-4 flex justify-between">
-									<button
-										onClick={() => handleArrowClick('left')}
-										className="bg-gray-200 hover:scale-95 duration-200 px-4 py-2 font-extrabold text-xl"
-									>
-										&larr; {/* Unicode character for left arrow */}
-									</button>
-									<button
-										onClick={() => handleArrowClick('right')}
-										className="bg-gray-200 hover:scale-95 duration-200 px-4 py-2 font-extrabold text-xl"
-									>
-										&rarr; {/* Unicode character for right arrow */}
-									</button>
-								</div>
-								{houses[selectedHouse].video && (
-									<div className="mt-4">
-										<video ref={videoRef} width="100%" height="auto" controls>
-											<source src={houses[selectedHouse].video} type="video/mp4" />
-											Your browser does not support the video tag.
-										</video>
+				{!loading &&
+					<div className="w-3/4 px-2 py-8">
+						<div>
+							{selectedHouse !== null && (
+								<>
+									<Image
+										loading="eager"
+										width={1920}
+										height={1080}
+										quality={100}
+										src={`/images/Renders/${houses[selectedHouse].images[currentImageIndex]}`}
+										alt={`${houses[selectedHouse].name} Image`}
+										className="shadow-lg"
+									/>
+									<div className="mt-4 flex justify-between">
+										<button
+											onClick={() => handleArrowClick('left')}
+											className="bg-gray-200 hover:scale-95 duration-200 px-4 py-2 font-extrabold text-xl"
+										>
+											&larr; {/* Unicode character for left arrow */}
+										</button>
+										<button
+											onClick={() => handleArrowClick('right')}
+											className="bg-gray-200 hover:scale-95 duration-200 px-4 py-2 font-extrabold text-xl"
+										>
+											&rarr; {/* Unicode character for right arrow */}
+										</button>
 									</div>
-								)}
-								{houses[selectedHouse].images2 && !houses[selectedHouse].video && (
-									<div className="mt-4">
-										<Image
-											width={1920}
-											height={1080}
-											quality={100}
-											src={`/images/Renders/${houses[selectedHouse].images2[currentImageIndex]}`}
-											alt={`${houses[selectedHouse].name} Image 2`}
-											className="shadow-lg"
-										/>
-										<div className="mt-4 flex justify-between">
-											<button
-												onClick={() => handleArrowClick('left')}
-												className="bg-gray-200 hover:scale-95 duration-200 px-4 py-2 font-extrabold text-xl"
-											>
-												&larr; {/* Unicode character for left arrow */}
-											</button>
-											<button
-												onClick={() => handleArrowClick('right')}
-												className="bg-gray-200 hover:scale-95 duration-200 px-4 py-2 font-extrabold text-xl"
-											>
-												&rarr; {/* Unicode character for right arrow */}
-											</button>
+									{houses[selectedHouse].video && (
+										<div className="mt-4">
+											<video ref={videoRef} width="100%" height="auto" controls>
+												<source src={houses[selectedHouse].video} type="video/mp4" />
+												Your browser does not support the video tag.
+											</video>
 										</div>
-									</div>
-								)}
-							</>
-						)}
-						{selectedHouse == null && (
-							<>
-								<Image
-									width={1500}
-									height={800}
-									alt="cover"
-									src={'/images/SouthpointCover.png'}
-								/>
-								<p className="pt-2">
-									Southpoint sits at the top of South Main Street, designed to
-									take advantage of the breathtaking views of the valley.
-									Homebuyers will enjoy the large lots suitable for single and
-									two-story houses.
-								</p>
-							</>
-						)}
+									)}
+									{houses[selectedHouse].images2 && !houses[selectedHouse].video && (
+										<div className="mt-4">
+											<Image
+												width={1920}
+												height={1080}
+												quality={100}
+												src={`/images/Renders/${houses[selectedHouse].images2[currentImageIndex]}`}
+												alt={`${houses[selectedHouse].name} Image 2`}
+												className="shadow-lg"
+											/>
+											<div className="mt-4 flex justify-between">
+												<button
+													onClick={() => handleArrowClick('left')}
+													className="bg-gray-200 hover:scale-95 duration-200 px-4 py-2 font-extrabold text-xl"
+												>
+													&larr; {/* Unicode character for left arrow */}
+												</button>
+												<button
+													onClick={() => handleArrowClick('right')}
+													className="bg-gray-200 hover:scale-95 duration-200 px-4 py-2 font-extrabold text-xl"
+												>
+													&rarr; {/* Unicode character for right arrow */}
+												</button>
+											</div>
+										</div>
+									)}
+								</>
+							)}
+
+							{selectedHouse == null && (
+								<>
+									<Image
+										width={1500}
+										height={800}
+										alt="cover"
+										src={'/images/SouthpointCover.png'}
+									/>
+									<p className="pt-2">
+										Southpoint sits at the top of South Main Street, designed to
+										take advantage of the breathtaking views of the valley.
+										Homebuyers will enjoy the large lots suitable for single and
+										two-story houses.
+									</p>
+								</>
+							)}
+						</div>
 					</div>
-				</div>
+				}
 			</div>
 			<footer className="bg-gray-100 text-gray-500 text-center py-1">
 				<p>
