@@ -94,6 +94,7 @@ const GalleryComponent = () => {
 						{selectedHouse !== null && (
 							<>
 								<Image
+									loading="eager"
 									width={1920}
 									height={1080}
 									quality={100}
