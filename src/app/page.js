@@ -1,5 +1,4 @@
 'use client'
-
 // components/GalleryComponent.js
 
 import Image from 'next/image'
@@ -13,7 +12,8 @@ const GalleryComponent = () => {
     },
     {
       name: '1B',
-      images: ['1B/Front.png'],
+      images: ['1B/Front.png', '1B/Floorplan.png'],
+      video: '/videos/1B/360.mp4',
     },
     {
       name: '2A',
@@ -21,7 +21,15 @@ const GalleryComponent = () => {
     },
     {
       name: '2B',
-      images: ['2B/Front.png'],
+      images: [
+        '2B/Front.png',
+        '2B/Left.png',
+        '2B/Right.png',
+        '2B/Rear.png',
+        '2B/firstFloor.png',
+        '2B/secondFloor.png',
+      ],
+      video: '/videos/2B/360.mp4',
     },
     {
       name: '3A',
@@ -57,7 +65,7 @@ const GalleryComponent = () => {
 
   return (
     <div>
-      <div className="flex bg-gray-100 h-screen text-gray-500">
+      <div className="flex bg-gray-100 min-h-screen text-gray-500">
         <div className="w-1/4 p-4 bg-gray-300">
           <h1
             onClick={() => {
@@ -109,6 +117,18 @@ const GalleryComponent = () => {
                     Right
                   </button>
                 </div>
+
+                {houses[selectedHouse].video && (
+                  <div className="mt-4">
+                    <video width="100%" height="auto" controls>
+                      <source
+                        src={houses[selectedHouse].video}
+                        type="video/mp4"
+                      />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                )}
               </>
             )}
             {selectedHouse == null && (
@@ -116,17 +136,16 @@ const GalleryComponent = () => {
                 <Image
                   width={1500}
                   height={800}
-                  alt='cover'
+                  alt="cover"
                   src={'/images/SouthpointCover.png'}
                 />
-                <p className='pt-2'>
+                <p className="pt-2">
                   Southpoint sits at the top of South Main Street, designed to
                   take advantage of the breathtaking views of the valley.
                   Homebuyers will enjoy the large lots suitable for single and
                   two-story houses.
                 </p>
               </>
-
             )}
           </div>
         </div>
