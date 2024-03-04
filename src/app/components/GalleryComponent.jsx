@@ -11,7 +11,13 @@ const GalleryComponent = () => {
 		},
 		{
 			name: '1B',
-			images: ['1B/Front.png', '1B/Floorplan.png'],
+			images: [
+				'1B/Front.png',
+				'1B/Left.png',
+				'1B/Right.png',
+				'1B/Rear.png',
+				'1B/Floorplan.png',
+			],
 			video: '/videos/1B/360.mp4',
 		},
 		{
