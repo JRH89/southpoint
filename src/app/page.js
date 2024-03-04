@@ -117,7 +117,7 @@ const GalleryComponent = () => {
                   width={1500}
                   height={800}
                   alt='cover'
-                  src={'/images/SouthPointCover.png'}
+                  src={'/images/SouthpointCover.png'}
                 />
                 <p className='pt-2'>
                   Southpoint sits at the top of South Main Street, designed to
