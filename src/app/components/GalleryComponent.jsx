@@ -30,6 +30,9 @@ const GalleryComponent = () => {
 		{
 			name: '2A',
 			images: ['2A/Front.png',
+'2A/Left.png',
+'2A/Right.png',
+'2A/Rear.png',
 
 			],
 		},
