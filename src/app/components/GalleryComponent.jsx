@@ -11,6 +11,7 @@ const GalleryComponent = () => {
 				'1A/Left.png',
 				'1A/Right.png',
 				'1A/Rear.png',
+				'1A/Floorplan.png',
 
 			],
 		},
