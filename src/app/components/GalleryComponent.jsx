@@ -7,7 +7,12 @@ const GalleryComponent = () => {
 	const houses = [
 		{
 			name: '1A',
-			images: ['1A/Front.png'],
+			images: ['1A/Front.png',
+				'1A/Left.png',
+				'1A/Right.png',
+				'1A/Rear.png',
+
+			],
 		},
 		{
 			name: '1B',
@@ -23,9 +28,7 @@ const GalleryComponent = () => {
 		{
 			name: '2A',
 			images: ['2A/Front.png',
-				'2A/Left.png',
-				'2A/Right.png',
-				'2A/Rear.png',
+
 			],
 		},
 		{
