@@ -14,6 +14,7 @@ const GalleryComponent = () => {
 				'1A/Floorplan.png',
 
 			],
+			video: '/videos/1A/360.mp4',
 		},
 		{
 			name: '1B',
