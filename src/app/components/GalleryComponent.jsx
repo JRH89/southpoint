@@ -30,9 +30,9 @@ const GalleryComponent = () => {
 		{
 			name: '2A',
 			images: ['2A/Front.png',
-'2A/Left.png',
-'2A/Right.png',
-'2A/Rear.png',
+				'2A/Left.png',
+				'2A/Right.png',
+				'2A/Rear.png',
 
 			],
 		},
@@ -50,7 +50,12 @@ const GalleryComponent = () => {
 		},
 		{
 			name: '3A',
-			images: ['3A/Front.png'],
+			images: ['3A/Front.png',
+				'3A/Left.png',
+				'3A/Right.png',
+				'3A/Rear.png',
+
+			],
 		},
 		{
 			name: '3B',
