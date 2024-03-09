@@ -59,7 +59,11 @@ const GalleryComponent = () => {
 		},
 		{
 			name: '3B',
-			images: ['3B/Front.png'],
+			images: ['3B/Front.png',
+				'3B/Left.png',
+				'3B/Right.png',
+				'3B/Rear.png',
+			],
 		},
 		{
 			name: 'Casitas',
