@@ -33,6 +33,7 @@ const GalleryComponent = () => {
 				'2A/Left.png',
 				'2A/Right.png',
 				'2A/Rear.png',
+				'2A/firstFloor.png',
 
 			],
 			video: '/videos/2A/360.mp4',
