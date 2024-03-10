@@ -35,7 +35,6 @@ const GalleryComponent = () => {
 				'2A/Rear.png',
 				'2A/firstFloor.png',
 				'2A/secondFloor.png',
-
 			],
 			video: '/videos/2A/360.mp4',
 		},
@@ -58,7 +57,6 @@ const GalleryComponent = () => {
 				'3A/Right.png',
 				'3A/Rear.png',
 				'3A/floorplan.png',
-
 			],
 		},
 		{
@@ -71,13 +69,13 @@ const GalleryComponent = () => {
 			],
 		},
 		{
-			name: 'CasitaA',
-			images: ['Casitas/Casita-A.png'],
+			name: 'Casita A',
+			images: ['CasitaA/Front.png'],
 
 		},
 		{
-			name: 'CasitaB',
-			images: ['Casitas/Casita-A.png'],
+			name: 'Casita B',
+			images: ['CasitaB/Front.png'],
 			video: '/videos/CasitaB/360.mp4',
 		},
 	]
@@ -118,8 +116,6 @@ const GalleryComponent = () => {
 
 	return (
 		<div>
-
-
 			<div className="flex portrait:flex-col mx-auto w-full bg-gray-100 min-h-screen text-gray-500">
 				<div className="w-1/4 portrait:w-full p-4 bg-gray-300">
 					<h1
@@ -144,7 +140,6 @@ const GalleryComponent = () => {
 						))}
 					</ul>
 				</div>
-
 				<div className="w-3/4 portrait:w-full px-2 py-8">
 					<div>
 						{selectedHouse !== null && (
@@ -160,43 +155,16 @@ const GalleryComponent = () => {
 										src={`/images/Renders/${houses[selectedHouse].images[currentImageIndex]}`}
 										alt={`${houses[selectedHouse].name} Image`}
 										className="shadow-lg"
-									/>}
+									/>
+								}
 								<div className="mt-4 flex justify-between">
-									<button
-										onClick={() => handleArrowClick('left')}
-										className="bg-gray-200 hover:scale-95 duration-200 px-4 py-2 font-extrabold text-xl"
-									>
-										&larr; {/* Unicode character for left arrow */}
-									</button>
-									<button
-										onClick={() => handleArrowClick('right')}
-										className="bg-gray-200 hover:scale-95 duration-200 px-4 py-2 font-extrabold text-xl"
-									>
-										&rarr; {/* Unicode character for right arrow */}
-									</button>
-								</div>
-								{houses[selectedHouse].video && (
-									<div className="mt-4">
-										<video ref={videoRef} width="100%" height="auto" controls>
-											<source src={houses[selectedHouse].video} type="video/mp4" />
-											Your browser does not support the video tag.
-										</video>
-									</div>
-								)}
-								{houses[selectedHouse].images2 && !houses[selectedHouse].video && (
-									<div className="mt-4">
-										<Image
-											width={1920}
-											height={1080}
-											quality={100}
-											src={`/images/Renders/${houses[selectedHouse].images2[currentImageIndex]}`}
-											alt={`${houses[selectedHouse].name} Image 2`}
-											className="shadow-lg"
-										/>
-										<div className="mt-4 flex justify-between">
+									{loading ? (
+										<span className="text-gray-400 font-extrabold text-xl">...</span>
+									) : (
+										<>
 											<button
 												onClick={() => handleArrowClick('left')}
-												className="bg-gray-200 hover:scale-95 duration-200 px-4 py-2 font-extrabold text-xl"
+												className="bg-gray-200 hover:scale-95 duration-200 px-4 py-2 my-auto flex font-extrabold text-xl"
 											>
 												&larr; {/* Unicode character for left arrow */}
 											</button>
@@ -206,12 +174,20 @@ const GalleryComponent = () => {
 											>
 												&rarr; {/* Unicode character for right arrow */}
 											</button>
-										</div>
+										</>
+									)}
+								</div>
+
+								{houses[selectedHouse].video && (
+									<div className="mt-4">
+										<video ref={videoRef} width="100%" height="auto" controls>
+											<source src={houses[selectedHouse].video} type="video/mp4" />
+											Your browser does not support the video tag.
+										</video>
 									</div>
 								)}
 							</>
 						)}
-
 						{selectedHouse == null && (
 							<>
 								<Image
@@ -230,7 +206,6 @@ const GalleryComponent = () => {
 						)}
 					</div>
 				</div>
-
 			</div>
 			<footer className="bg-gray-100 text-gray-500 text-center py-1">
 				<p>
