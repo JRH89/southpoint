@@ -75,7 +75,7 @@ const GalleryComponent = () => {
 				'CasitaA/Front.png',
 				'CasitaA/Left.png',
 				'CasitaA/Right.png',
-				'CasitaA/Fear.png',
+				'CasitaA/Rear.png',
 			],
 
 		},
@@ -85,7 +85,7 @@ const GalleryComponent = () => {
 				'CasitaB/Front.png',
 				'CasitaB/Left.png',
 				'CasitaB/Right.png',
-				'CasitaB/Fear.png',
+				'CasitaB/Rear.png',
 			],
 			video: '/videos/CasitaB/360.mp4',
 		},
