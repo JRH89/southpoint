@@ -12,7 +12,6 @@ const GalleryComponent = () => {
 				'1A/Right.png',
 				'1A/Rear.png',
 				'1A/Floorplan.png',
-
 			],
 			video: '/videos/1A/360.mp4',
 		},
@@ -29,7 +28,8 @@ const GalleryComponent = () => {
 		},
 		{
 			name: '2A',
-			images: ['2A/Front.png',
+			images: [
+				'2A/Front.png',
 				'2A/Left.png',
 				'2A/Right.png',
 				'2A/Rear.png',
@@ -52,20 +52,22 @@ const GalleryComponent = () => {
 		},
 		{
 			name: '3A',
-			images: ['3A/Front.png',
+			images: [
+				'3A/Front.png',
 				'3A/Left.png',
 				'3A/Right.png',
 				'3A/Rear.png',
-				'3A/floorplan.png',
+				'3A/Floorplan.png',
 			],
 		},
 		{
 			name: '3B',
-			images: ['3B/Front.png',
+			images: [
+				'3B/Front.png',
 				'3B/Left.png',
 				'3B/Right.png',
 				'3B/Rear.png',
-				'3B/floorplan.png',
+				'3B/Floorplan.png',
 			],
 		},
 		{
@@ -85,7 +87,6 @@ const GalleryComponent = () => {
 	const [loading, setLoading] = useState(false)
 	const videoRef = useRef(null)
 
-
 	const handleHouseClick = (index) => {
 		setLoading(true)
 		setSelectedHouse(index)
@@ -99,8 +100,6 @@ const GalleryComponent = () => {
 
 		setLoading(false)
 	}
-
-
 
 	const handleArrowClick = (direction) => {
 		setLoading(true)
@@ -177,7 +176,6 @@ const GalleryComponent = () => {
 										</>
 									)}
 								</div>
-
 								{houses[selectedHouse].video && (
 									<div className="mt-4">
 										<video ref={videoRef} width="100%" height="auto" controls>
