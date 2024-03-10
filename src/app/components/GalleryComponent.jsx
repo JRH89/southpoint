@@ -71,9 +71,14 @@ const GalleryComponent = () => {
 			],
 		},
 		{
-			name: 'Casitas',
+			name: 'CasitaA',
 			images: ['Casitas/Casita-A.png'],
-			images2: ['Casitas/Casita-B.png'],
+
+		},
+		{
+			name: 'CasitaB',
+			images: ['Casitas/Casita-A.png'],
+			video: '/videos/CasitaB/360.mp4',
 		},
 	]
 
