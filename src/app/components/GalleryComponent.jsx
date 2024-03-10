@@ -12,10 +12,7 @@ const GalleryComponent = () => {
 				'1A/Right.png',
 				'1A/Rear.png',
 				'1A/Floorplan.png',
-<<<<<<< HEAD
-=======
 
->>>>>>> 47126cd667417088e3798dc5d2bf4004ced5e226
 			],
 			video: '/videos/1A/360.mp4',
 		},
@@ -32,12 +29,7 @@ const GalleryComponent = () => {
 		},
 		{
 			name: '2A',
-<<<<<<< HEAD
-			images: [
-				'2A/Front.png',
-=======
 			images: ['2A/Front.png',
->>>>>>> 47126cd667417088e3798dc5d2bf4004ced5e226
 				'2A/Left.png',
 				'2A/Right.png',
 				'2A/Rear.png',
@@ -60,38 +52,20 @@ const GalleryComponent = () => {
 		},
 		{
 			name: '3A',
-<<<<<<< HEAD
-			images: [
-				'3A/Front.png',
-				'3A/Left.png',
-				'3A/Right.png',
-				'3A/Rear.png',
-				'3A/Floorplan.png',
-=======
 			images: ['3A/Front.png',
 				'3A/Left.png',
 				'3A/Right.png',
 				'3A/Rear.png',
 				'3A/floorplan.png',
->>>>>>> 47126cd667417088e3798dc5d2bf4004ced5e226
 			],
 		},
 		{
 			name: '3B',
-<<<<<<< HEAD
-			images: [
-				'3B/Front.png',
-				'3B/Left.png',
-				'3B/Right.png',
-				'3B/Rear.png',
-				'3B/Floorplan.png',
-=======
 			images: ['3B/Front.png',
 				'3B/Left.png',
 				'3B/Right.png',
 				'3B/Rear.png',
 				'3B/floorplan.png',
->>>>>>> 47126cd667417088e3798dc5d2bf4004ced5e226
 			],
 		},
 		{
@@ -111,10 +85,7 @@ const GalleryComponent = () => {
 	const [loading, setLoading] = useState(false)
 	const videoRef = useRef(null)
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 47126cd667417088e3798dc5d2bf4004ced5e226
 	const handleHouseClick = (index) => {
 		setLoading(true)
 		setSelectedHouse(index)
@@ -129,11 +100,8 @@ const GalleryComponent = () => {
 		setLoading(false)
 	}
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 47126cd667417088e3798dc5d2bf4004ced5e226
 	const handleArrowClick = (direction) => {
 		setLoading(true)
 		const newIndex =
@@ -209,10 +177,7 @@ const GalleryComponent = () => {
 										</>
 									)}
 								</div>
-<<<<<<< HEAD
-=======
 
->>>>>>> 47126cd667417088e3798dc5d2bf4004ced5e226
 								{houses[selectedHouse].video && (
 									<div className="mt-4">
 										<video ref={videoRef} width="100%" height="auto" controls>
