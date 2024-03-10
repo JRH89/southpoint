@@ -71,12 +71,22 @@ const GalleryComponent = () => {
 		},
 		{
 			name: 'Casita A',
-			images: ['CasitaA/Front.png'],
+			images: [
+				'CasitaA/Front.png',
+				'CasitaA/Left.png',
+				'CasitaA/Right.png',
+				'CasitaA/Fear.png',
+			],
 
 		},
 		{
 			name: 'Casita B',
-			images: ['CasitaB/Front.png'],
+			images: [
+				'CasitaB/Front.png',
+				'CasitaB/Left.png',
+				'CasitaB/Right.png',
+				'CasitaB/Fear.png',
+			],
 			video: '/videos/CasitaB/360.mp4',
 		},
 	]
