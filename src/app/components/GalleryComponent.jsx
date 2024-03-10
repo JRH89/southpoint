@@ -96,7 +96,6 @@ const GalleryComponent = () => {
 	const [loading, setLoading] = useState(false)
 	const videoRef = useRef(null)
 
-
 	const handleHouseClick = (index) => {
 		setLoading(true)
 		setSelectedHouse(index)
@@ -110,8 +109,6 @@ const GalleryComponent = () => {
 
 		setLoading(false)
 	}
-
-
 
 	const handleArrowClick = (direction) => {
 		setLoading(true)
@@ -188,7 +185,6 @@ const GalleryComponent = () => {
 										</>
 									)}
 								</div>
-
 								{houses[selectedHouse].video && (
 									<div className="mt-4">
 										<video ref={videoRef} width="100%" height="auto" controls>
