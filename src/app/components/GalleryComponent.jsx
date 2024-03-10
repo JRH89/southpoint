@@ -57,7 +57,7 @@ const GalleryComponent = () => {
 				'3A/Left.png',
 				'3A/Right.png',
 				'3A/Rear.png',
-				'3A/Floorplan.png',
+				'3A/floorplan.png',
 			],
 		},
 		{
@@ -66,7 +66,7 @@ const GalleryComponent = () => {
 				'3B/Left.png',
 				'3B/Right.png',
 				'3B/Rear.png',
-				'3B/Floorplan.png',
+				'3B/floorplan.png',
 			],
 		},
 		{
