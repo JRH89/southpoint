@@ -59,6 +59,7 @@ const GalleryComponent = () => {
 				'3A/Rear.png',
 				'3A/floorplan.png',
 			],
+			video: '/videos/3A/360.mp4',
 		},
 		{
 			name: '3B',
