@@ -80,7 +80,7 @@ const GalleryComponent = () => {
 				'CasitaA/Rear.png',
 				'CasitaA/Floorplan.png',
 			],
-			video: '/videos/3A/360.mp4',
+			video: '/videos/CasitaA/360.mp4',
 
 		},
 		{
