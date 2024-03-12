@@ -128,7 +128,7 @@ const GalleryComponent = () => {
 	return (
 		<div>
 			<div className="flex portrait:flex-col mx-auto w-full bg-gray-100 min-h-screen text-gray-500">
-				<div className="sticky top-0 h-screen w-1/4 portrait:w-full p-4 bg-gray-300">
+				<div className="sticky top-0 h-screen w-1/4 portrait:w-full portrait:h-auto portrait:p-2 portrait:pt-1 p-4 bg-gray-300">
 					<h1
 						onClick={() => {
 							setSelectedHouse(null)
@@ -151,7 +151,7 @@ const GalleryComponent = () => {
 						))}
 					</ul>
 				</div>
-				<div className="w-3/4 portrait:w-full px-2 py-6 overflow-y-auto">
+				<div className="w-3/4 portrait:w-full px-2 py-6 portrait:py-3 overflow-y-auto">
 					<div>
 						{selectedHouse !== null && (
 							<>
