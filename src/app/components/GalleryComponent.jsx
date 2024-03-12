@@ -1,6 +1,5 @@
 'use client'
 
-
 import Image from 'next/image'
 import React, { useState, useRef } from 'react'
 
@@ -13,7 +12,6 @@ const GalleryComponent = () => {
 				'1A/Right.png',
 				'1A/Rear.png',
 				'1A/Floorplan.png',
-
 			],
 			video: '/videos/1A/360.mp4',
 		},
@@ -81,7 +79,6 @@ const GalleryComponent = () => {
 				'CasitaA/Floorplan.png',
 			],
 			video: '/videos/CasitaA/360.mp4',
-
 		},
 		{
 			name: 'Casita B',
@@ -117,6 +114,7 @@ const GalleryComponent = () => {
 
 	const handleArrowClick = (direction) => {
 		setLoading(true)
+
 		const newIndex =
 			direction === 'left'
 				? (currentImageIndex - 1 + houses[selectedHouse].images.length) %
