@@ -128,7 +128,7 @@ const GalleryComponent = () => {
 	return (
 		<div>
 			<div className="flex portrait:flex-col mx-auto w-full bg-gray-100 min-h-screen text-gray-500">
-				<div className="sticky top-0 h-screen w-1/4 portrait:w-full portrait:h-auto portrait:p-2 portrait:pt-2 p-4 bg-gray-300">
+				<div className="sticky top-0 h-screen w-1/4 portrait:w-full  portrait:h-auto  portrait:p-2 portrait:pt-2 p-4 bg-gray-300">
 					<ul className="grid portrait:grid-cols-2 grid-cols-1 portrait:gap-1 gap-2">
 						{houses.map((house, index) => (
 							<li
@@ -141,7 +141,7 @@ const GalleryComponent = () => {
 						))}
 					</ul>
 				</div>
-				<div className="w-3/4 portrait:w-full px-2 pb-6 pt-4 portrait:py-3 overflow-y-auto">
+				<div className="w-3/4 portrait:w-full portrait:my-auto px-2 pb-6 pt-4 portrait:pb-6 overflow-y-auto">
 					<div>
 						{selectedHouse !== null && (
 							<>
