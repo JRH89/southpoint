@@ -128,7 +128,7 @@ const GalleryComponent = () => {
 	return (
 		<div>
 			<div className="flex portrait:flex-col mx-auto w-full bg-gray-100 min-h-screen text-gray-500">
-				<div className="sticky top-0 h-screen w-1/4 portrait:w-full portrait:h-auto portrait:p-2 portrait:pt-1 p-4 bg-gray-300">
+				<div className="sticky top-0 h-screen w-1/4 portrait:w-full portrait:h-auto portrait:p-2 portrait:pt-2 p-4 bg-gray-300">
 					<ul className="grid portrait:grid-cols-2 grid-cols-1 portrait:gap-1 gap-2">
 						{houses.map((house, index) => (
 							<li
@@ -169,7 +169,7 @@ const GalleryComponent = () => {
 											>
 												&larr; {/* Unicode character for left arrow */}
 											</button>
-											Scroll down for video
+
 											<button
 												onClick={() => handleArrowClick('right')}
 												className="bg-gray-200 hover:scale-95 duration-200 px-4 py-2 font-extrabold text-xl"
