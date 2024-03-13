@@ -129,22 +129,12 @@ const GalleryComponent = () => {
 		<div>
 			<div className="flex portrait:flex-col mx-auto w-full bg-gray-100 min-h-screen text-gray-500">
 				<div className="sticky top-0 h-screen w-1/4 portrait:w-full portrait:h-auto portrait:p-2 portrait:pt-1 p-4 bg-gray-300">
-					{/* <h1
-						onClick={() => {
-							setSelectedHouse(null)
-							setCurrentImageIndex(0)
-						}}
-						className="cursor-pointer w-full text-center mx-auto py-2 my-2 text-gray-500 sm:text-xl text-sm bg-gray-100 self-center items-center content-center"
-					>
-						South Point 13
-					</h1> */}
-					<ul>
+					<ul className="grid portrait:grid-cols-2 grid-cols-1 portrait:gap-1 gap-2">
 						{houses.map((house, index) => (
 							<li
 								key={index}
 								onClick={() => handleHouseClick(index)}
-								className={`cursor-pointer text-sm text-center hover:ml-4 duration-200 p-2 mb-2 portrait:mb-1 ${selectedHouse === index ? 'bg-white border border-gray-400' : 'bg-gray-200'
-									}`}
+								className={`cursor-pointer text-sm text-center hover:ml-4 duration-200 p-2 portrait:p-1 mb-2 portrait:mb-1 ${selectedHouse === index ? 'bg-white border border-gray-400' : 'bg-gray-200'}`}
 							>
 								{house.name}
 							</li>
