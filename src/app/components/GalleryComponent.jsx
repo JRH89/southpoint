@@ -151,7 +151,7 @@ const GalleryComponent = () => {
 						))}
 					</ul>
 				</div>
-				<div className="w-3/4 portrait:w-full px-2 py-6 portrait:py-3 overflow-y-auto">
+				<div className="w-3/4 portrait:w-full px-2 pb-6 pt-4 portrait:py-3 overflow-y-auto">
 					<div>
 						{selectedHouse !== null && (
 							<>
