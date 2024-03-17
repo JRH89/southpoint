@@ -8,7 +8,7 @@ export const metadata = {
   title: "Arc Viz by Hooker Hill Studios",
   description: "Architectural Visualization featuring photo-realistic renders.",
   url: "https://arcviz.hookerhillstudios.com/",
-  image: "https://arcviz.hookerhillstudios.com/_next/image?url=%2Fimages%2FRenders%2F1A%2FFront.png&w=3840&q=100",
+  image: "https://arcviz.hookerhillstudios.com/images/Renders/2A/Front.png",
   twitterUsername: "@GameDevJared89",
 }
 
@@ -25,11 +25,11 @@ export default function RootLayout({ children }) {
         <meta property="og:url" content={metadata.url} />
         <meta property="og:image" content={metadata.image} />
         <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content={metadata.twitterUsername} />
-        <meta name="twitter:title" content={metadata.title} />
-        <meta name="twitter:description" content={metadata.description} />
-        <meta name="twitter:image" content={metadata.image} />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:site" content={metadata.twitterUsername} />
+        <meta property="twitter:title" content={metadata.title} />
+        <meta property="twitter:description" content={metadata.description} />
+        <meta property="twitter:image" content={metadata.image} />
         <title>{metadata.title}</title>
       </Head>
       <body className={inter.className}>{children}</body>
