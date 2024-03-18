@@ -138,7 +138,33 @@ const GalleryComponent = () => {
 							>
 								{house.name}
 							</li>
+
 						))}
+						<li
+							onClick={() => {
+								// Create a link element
+								const link = document.createElement('a')
+
+								// Set the href attribute to the file URL
+								link.href = "https://firebasestorage.googleapis.com/v0/b/hookerhillstu.appspot.com/o/SP13.zip?alt=media&token=c703444d-e3e5-4bed-bd0a-712e6f58f480"
+
+								// Set the download attribute to the desired filename (optional)
+								link.download = "SP13.zip"
+
+								// Append the link to the document body
+								document.body.appendChild(link)
+
+								// Trigger a click event on the link
+								link.click()
+
+								// Remove the link from the document body (optional)
+								document.body.removeChild(link)
+							}}
+							className={`cursor-pointer text-sm text-center hover:scale-110 duration-200 p-2 portrait:p-1 mb-2 portrait:mb-1`}
+						>
+							Download Virtual Tour
+						</li>
+
 					</ul>
 				</div>
 				<div className="w-3/4 portrait:w-full portrait:my-auto px-2 pb-6 pt-4 portrait:pb-6 overflow-y-auto">
