@@ -148,7 +148,7 @@ const GalleryComponent = () => {
 							const link = document.createElement('a')
 
 							// Set the href attribute to the file URL
-							link.href = "https://firebasestorage.googleapis.com/v0/b/hookerhillstu.appspot.com/o/South%20Point%2013.zip?alt=media&token=301e2e2f-92db-4002-b413-adb6861e9ada"
+							link.href = "https://firebasestorage.googleapis.com/v0/b/hookerhillstu.appspot.com/o/South%20Point%2013.zip?alt=media&token=0742ecee-1515-4d02-984b-57c4a7aadbdc"
 
 							// Set the download attribute to the desired filename (optional)
 							link.download = "SouthPoint13.zip"
