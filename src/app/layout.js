@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google"
-import Head from "next/head"
 import "./globals.css"
+import { Analytics } from "@vercel/analytics/react"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -15,7 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Head>
+      <head>
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -31,8 +31,11 @@ export default function RootLayout({ children }) {
         <meta property="twitter:description" content={metadata.description} />
         <meta property="twitter:image" content={metadata.image} />
         <title>{metadata.title}</title>
-      </Head>
-      <body className={inter.className}>{children}</body>
+      </head>
+      <body className={inter.className}>
+        {children}
+        <Analytics />
+      </body>
     </html>
   )
 }
