@@ -91,6 +91,18 @@ const GalleryComponent = () => {
 			],
 			video: '/videos/CasitaB/360.mp4',
 		},
+		{
+			name: 'Virtual Tour',
+			images: [
+				'Tour/1.png',
+				'Tour/2.png',
+				'Tour/3.png',
+				'Tour/4.png',
+
+			],
+			video: '/videos/Tour/Demo.mp4',
+
+		},
 	]
 
 	const [selectedHouse, setSelectedHouse] = useState(0)
@@ -100,6 +112,9 @@ const GalleryComponent = () => {
 
 	const handleHouseClick = (index) => {
 		setLoading(true)
+
+
+
 		setSelectedHouse(index)
 		setCurrentImageIndex(0)
 
@@ -111,6 +126,7 @@ const GalleryComponent = () => {
 
 		setLoading(false)
 	}
+
 
 	const handleArrowClick = (direction) => {
 		setLoading(true)
@@ -138,7 +154,6 @@ const GalleryComponent = () => {
 							>
 								{house.name}
 							</li>
-
 						))}
 
 					</ul>
